@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dery Ahnaf Rashad | Industrial Electrical Engineering Portfolio</title>
+  <meta name="description" content="Portofolio Dery Ahnaf Rashad - Mahasiswa D3 Teknik Elektro Industri PENS. Spesialisasi dalam sistem kelistrikan industri, PLC & otomasi, mesin listrik, dan proteksi." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+            },
+            accent: {
+              400: '#34d399',
+              500: '#10b981',
+            },
+            industrial: {
+              gold: '#f59e0b',
+              navy: '#0b132b',
+              surface: '#111c38',
+              card: '#162244',
+              border: '#1f305e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle tech grid pattern */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .circuit-glow {
+      box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-industrial-navy text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white bg-grid-pattern min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient light gradients -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed top-1/3 right-10 w-80 h-80 bg-accent-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed bottom-20 left-1/3 w-96 h-96 bg-industrial-gold/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-industrial-navy/85 border-b border-industrial-border transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Name -->
+      <a href="#beranda" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-500 flex items-center justify-center font-bold text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="zap" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="font-bold text-lg tracking-tight block text-white group-hover:text-brand-400 transition-colors">Dery Ahnaf Rashad</span>
+          <span class="text-xs text-slate-400 font-mono tracking-wider flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> PENS • D3 ELIN A
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#beranda" class="hover:text-brand-400 transition-colors">Beranda</a>
+        <a href="#tentang" class="hover:text-brand-400 transition-colors">Tentang Saya</a>
+        <a href="#keahlian" class="hover:text-brand-400 transition-colors">Keahlian</a>
+        <a href="#proyek" class="hover:text-brand-400 transition-colors">Proyek</a>
+        <a href="#pengalaman" class="hover:text-brand-400 transition-colors">Pengalaman</a>
+        <a href="#pendidikan" class="hover:text-brand-400 transition-colors">Pendidikan</a>
+        <a href="#kontak" class="hover:text-brand-400 transition-colors">Kontak</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="mailto:deryahnaf@gmail.com" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-2">
+          <i data-lucide="file-down" class="w-4 h-4 text-brand-400"></i> Unduh CV
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-industrial-surface border-b border-industrial-border px-6 py-6 space-y-4">
+      <a href="#beranda" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Beranda</a>
+      <a href="#tentang" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Tentang Saya</a>
+      <a href="#keahlian" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Keahlian</a>
+      <a href="#proyek" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Proyek</a>
+      <a href="#pengalaman" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Pengalaman</a>
+      <a href="#pendidikan" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Pendidikan</a>
+      <a href="#kontak" class="block text-slate-200 hover:text-brand-400 font-medium py-1">Kontak</a>
+      <div class="pt-4 border-t border-slate-700/60">
+        <a href="mailto:deryahnaf@gmail.com" class="w-full text-center px-4 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition flex items-center justify-center gap-2">
+          <i data-lucide="file-down" class="w-4 h-4"></i> Unduh CV
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28 py-12">
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="beranda" class="pt-6 sm:pt-12 scroll-mt-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/70 text-xs font-mono text-slate-300">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Politeknik Elektronika Negeri Surabaya • Angkatan 2025
+          </div>
+
+          <!-- Main Title & Headline -->
+          <div class="space-y-3">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Dery Ahnaf Rashad
+            </h1>
+            <p class="text-lg sm:text-2xl font-semibold bg-gradient-to-r from-brand-400 via-sky-300 to-accent-400 bg-clip-text text-transparent">
+              Mahasiswa D3 Teknik Elektro Industri PENS | Industrial Electrical Systems, PLC & Automation
+            </p>
+          </div>
+
+          <!-- Tagline Quote -->
+          <blockquote class="border-l-4 border-brand-500 pl-4 py-1 italic text-slate-300 text-sm sm:text-base font-light">
+            “Memahami cara kerja, menganalisis permasalahan, dan mengembangkan solusi kelistrikan yang aman, efektif, serta bermanfaat.”
+          </blockquote>
+
+          <!-- Brief Summary -->
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Saya mengembangkan pemahaman teknik melalui praktikum laboratorium, simulasi sistem tenaga listrik, pemrograman logika PLC Omron, serta pengalaman praktik penarikan kabel (<span class="text-brand-400 font-medium">wiring</span>) dan troubleshooting kelistrikan industri.
+          </p>
+
+          <!-- Location & Details Chip -->
+          <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 pt-1">
+            <span class="flex items-center gap-1.5 bg-slate-800/60 px-3 py-1.5 rounded-md border border-slate-700/50">
+              <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i> Surabaya, Jawa Timur, Indonesia
+            </span>
+            <span class="flex items-center gap-1.5 bg-slate-800/60 px-3 py-1.5 rounded-md border border-slate-700/50">
+              <i data-lucide="cpu" class="w-4 h-4 text-brand-400"></i> Kelas D3 ELIN A
+            </span>
+            <span class="flex items-center gap-1.5 bg-slate-800/60 px-3 py-1.5 rounded-md border border-slate-700/50">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> K3 & Proteksi Kelistrikan
+            </span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#proyek" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 transition-all flex items-center gap-2.5">
+              <i data-lucide="folder-kanban" class="w-4 h-4"></i> Lihat Dokumentasi Proyek
+            </a>
+            <a href="#kontak" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm transition-all flex items-center gap-2.5">
+              <i data-lucide="send" class="w-4 h-4 text-accent-400"></i> Hubungi Saya
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Side Quick Stats Card -->
+        <div class="lg:col-span-4">
+          <div class="bg-industrial-surface/90 border border-industrial-border rounded-2xl p-6 shadow-2xl relative overflow-hidden circuit-glow">
+            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-brand-500/10 rounded-full blur-xl pointer-events-none"></div>
+            
+            <div class="flex items-center justify-between pb-4 border-b border-industrial-border">
+              <span class="text-xs font-mono uppercase text-slate-400 tracking-wider">Ringkasan Profil</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-500/20 text-brand-400 font-mono">D3 ELIN</span>
+            </div>
+
+            <div class="space-y-4 pt-4 text-sm">
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-slate-800/80 text-brand-400 shrink-0">
+                  <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Institusi</div>
+                  <div class="font-semibold text-white">Politeknik Elektronika Negeri Surabaya</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-slate-800/80 text-emerald-400 shrink-0">
+                  <i data-lucide="terminal" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Kontrol & Otomasi</div>
+                  <div class="font-semibold text-white">CX-Programmer (Omron PLC)</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-slate-800/80 text-amber-400 shrink-0">
+                  <i data-lucide="activity" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Sistem Pembangkitan & Mesin</div>
+                  <div class="font-semibold text-white">Generator Hidro, PLTD Mini & Motor DC</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-slate-800/80 text-sky-400 shrink-0">
+                  <i data-lucide="wrench" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Praktik Lapangan</div>
+                  <div class="font-semibold text-white">Wiring Technician & Troubleshooting</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-industrial-border/80 flex items-center justify-between text-xs text-slate-400">
+              <span>Status: <strong class="text-emerald-400">Mahasiswa Aktif</strong></span>
+              <span>Kelas: <strong class="text-white">D3 ELIN A</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT ME ==================== -->
+    <section id="tentang" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">01. Profil Lengkap</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Tentang Saya</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Pendekatan Kerja & Minat Industri</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Text Narration -->
+        <div class="lg:col-span-7 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+          <p>
+            Bagi saya, mempelajari teknik elektro bukan sekadar menghafal fungsi komponen, melainkan memahami bagaimana sistem bekerja secara menyeluruh: mulai dari interaksi antarkomponen, urutan operasi logika kendali (<em class="text-slate-100 font-medium">sequence of operation</em>), analisis akar penyebab gangguan (<em class="text-slate-100 font-medium">troubleshooting</em>), hingga penentuan proteksi yang tepat untuk keselamatan manusia dan peralatan.
+          </p>
+          <p>
+            Sebagai mahasiswa D3 Teknik Elektro Industri di PENS (Kelas D3 ELIN A, Angkatan 2025), saya secara konsisten membangun kompetensi melalui pengujian laboratorium langsung—seperti pengujian generator hidro, PLTD mini 0,7 kW, motor DC kompon panjang diferensial, dan proteksi kebocoran arus ELCB—serta pemrograman logika sekuensial PLC Omron menggunakan CX-Programmer.
+          </p>
+          <p>
+            Didukung pengalaman magang di perusahaan kontraktor dan pemeliharaan kelistrikan, saya terbiasa menghubungkan pemahaman teori di atas meja dengan kondisi fisik instalasi di lapangan. Saya memiliki pendekatan kerja yang analitis, terstruktur, disiplin terhadap prosedur K3 listrik, dan memiliki komitmen belajar jangka panjang untuk berkontribusi di industri energi, pembangkitan, maupun manufaktur.
+          </p>
+        </div>
+
+        <!-- Focus Areas Grid -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5">
+          <div class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-brand-500/50 transition">
+            <div class="flex items-center gap-3 mb-1.5">
+              <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400"><i data-lucide="cpu" class="w-4 h-4"></i></div>
+              <h3 class="font-semibold text-white text-sm">Industrial Automation & PLC</h3>
+            </div>
+            <p class="text-xs text-slate-400">Pemrograman sekuensial ladder diagram, timer, counter, pemetaan I/O, dan safety interlock.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-accent-500/50 transition">
+            <div class="flex items-center gap-3 mb-1.5">
+              <div class="p-2 rounded-lg bg-accent-500/10 text-accent-400"><i data-lucide="zap" class="w-4 h-4"></i></div>
+              <h3 class="font-semibold text-white text-sm">Power Generation & Machines</h3>
+            </div>
+            <p class="text-xs text-slate-400">Pengamatan karakteristik generator hidro, sistem PLTD mini, serta respons torsi & kecepatan motor DC.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-industrial-gold/50 transition">
+            <div class="flex items-center gap-3 mb-1.5">
+              <div class="p-2 rounded-lg bg-amber-500/10 text-industrial-gold"><i data-lucide="shield-alert" class="w-4 h-4"></i></div>
+              <h3 class="font-semibold text-white text-sm">Protection & Maintenance</h3>
+            </div>
+            <p class="text-xs text-slate-400">Pengujian ELCB, proteksi beban lebih (TOR), sistem pembumian, dan instalasi starter Star-Delta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. TECHNICAL SKILLS ==================== -->
+    <section id="keahlian" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">02. Kemampuan Teknis</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Keahlian & Perangkat Lunak</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Didasarkan pada Kemampuan Aktual & Praktikum</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1: PLC & Automation -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-brand-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-brand-500/10 text-brand-400">
+                <i data-lucide="binary" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Kontrol & Otomasi</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">PLC & Otomasi Industri</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-400 mt-0.5 shrink-0"></i>
+                <span><strong>CX-Programmer:</strong> Pemrograman ladder diagram untuk PLC Omron.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-400 mt-0.5 shrink-0"></i>
+                <span>Pengembangan logika kontrol sekuensial & ON-OFF.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-brand-400 mt-0.5 shrink-0"></i>
+                <span>Pemetaan I/O sensor, aktuator, internal relay, timer, latch/reset, dan interlock.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">CX-Programmer</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Omron PLC</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Ladder Logic</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Power, Machines & Protection -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-accent-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-accent-500/10 text-accent-400">
+                <i data-lucide="gauge" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Pembangkitan & Daya</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Mesin Listrik & Proteksi</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Karakteristik generator hidro & PLTD mini 0,7 kW.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Karakteristik motor DC (penguat kompon panjang diferensial).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Pengujian ELCB (arus bocor ke tanah), MCCB, TOR & pembumian.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Pengasutan motor induksi DOL dan Star-Delta.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Generator Hidro</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PLTD Mini</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">ELCB</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Star-Delta</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Circuit & Engineering Software -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-industrial-gold/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-amber-500/10 text-industrial-gold">
+                <i data-lucide="circuit-board" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Software & Desain</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Simulasi & Hardware Design</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-industrial-gold mt-0.5 shrink-0"></i>
+                <span><strong>KiCAD:</strong> Skematik sirkuit, routing PCB, dan verifikasi 3D.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-industrial-gold mt-0.5 shrink-0"></i>
+                <span><strong>ETAP:</strong> Pembelajaran dasar analisis sistem tenaga listrik.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-industrial-gold mt-0.5 shrink-0"></i>
+                <span><strong>PSIM & Proteus:</strong> Simulasi elektronika daya & rangkaian.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-industrial-gold mt-0.5 shrink-0"></i>
+                <span><strong>AutoCAD & FluidSIM:</strong> Drafting dasar & sirkuit fluida.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">KiCAD 3D</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">ETAP</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PSIM</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FluidSIM</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Field & Hands-on -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-sky-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-sky-500/10 text-sky-400">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Praktik Lapangan</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Wiring & Troubleshooting</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-sky-400 mt-0.5 shrink-0"></i>
+                <span>Penarikan, pemotongan, dan terminasi kabel panel kontrol.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-sky-400 mt-0.5 shrink-0"></i>
+                <span>Pengujian kontinuitas rangkaian menggunakan multimeter.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-sky-400 mt-0.5 shrink-0"></i>
+                <span>Pelacakan kabel putus/longgar dan troubleshooting gangguan.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Wiring Technician</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Panel Assembly</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Troubleshooting</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Engineering Foundations -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-emerald-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+                <i data-lucide="book-open" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Dasar Keteknikan</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Analisis & Dokumentasi</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span>Analisis rangkaian AC/DC berbasis Hukum Kirchhoff.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span>Pengolahan data numerik hasil praktikum laboratorium.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0"></i>
+                <span>Penyusunan laporan teknis terstruktur dengan Microsoft Office.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Hukum Kirchhoff</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Data Analysis</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Laporan Praktikum</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Industrial Mindset -->
+        <div class="bg-industrial-surface border border-industrial-border rounded-xl p-5 hover:border-purple-500/40 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono text-slate-400">Standar Industri</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-2">Keselamatan & Prosedur (K3)</h3>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 mt-0.5 shrink-0"></i>
+                <span>Kepatuhan terhadap Standar Operasional Prosedur (SOP) laboratorium.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 mt-0.5 shrink-0"></i>
+                <span>Keselamatan kerja kelistrikan (penggunaan APD & isolasi aman).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-purple-400 mt-0.5 shrink-0"></i>
+                <span>Kerja sama tim dalam pengujian mesin dan proyek teknis.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-700/60 flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">K3 Kelistrikan</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">SOP Lab PENS</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Teamwork</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. PROJECT PORTFOLIO ==================== -->
+    <section id="proyek" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">03. Portofolio Proyek</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Proyek & Praktikum Terpilih</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Simulasi Kontrol, Pembangkitan & Pengujian Laboratorium</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap gap-2 text-xs font-medium">
+        <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-lg bg-brand-600 text-white transition">Semua Proyek (8)</button>
+        <button onclick="filterProjects('plc')" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">PLC & Otomasi (3)</button>
+        <button onclick="filterProjects('power')" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Mesin & Pembangkitan (3)</button>
+        <button onclick="filterProjects('protection')" class="filter-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">Proteksi & Hardware (2)</button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-container">
+
+        <!-- Project 1: Automatic Liquid Filling -->
+        <div class="project-item plc bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Otomasi & Kontrol Proses</span>
+              <span class="text-xs text-slate-400 font-mono">Prioritas 1</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Automatic Liquid Filling System (Konveyor 3 Stasiun)</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pengembangan konsep dan logika kendali sekuensial PLC untuk sistem pengisian cairan otomatis. Mengatur siklus gerak konveyor, pembacaan sensor deteksi botol di setiap sudut jalur, penghentian konveyor presisi di stasiun pengisian, aktivasi nosel pengisian, dan koordinasi interlock keselamatan.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Problem:</strong> Sinkronisasi pergerakan konveyor dan pengisian tanpa tumpah atau tabrakan sekuens.</div>
+              <div><strong class="text-slate-200">Solusi:</strong> Ladder logic terkoordinasi (sensor $\rightarrow$ stop $\rightarrow$ fill valve $\rightarrow$ restart conveyor) dengan interlock keselamatan.</div>
+              <div><strong class="text-slate-200">Peran:</strong> Perancang logika ladder CX-Programmer dan pemetaan tabel I/O.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">CX-Programmer</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Omron PLC</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Sensors</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Simulasi Valid</span>
+          </div>
+        </div>
+
+        <!-- Project 2: PLC Sequential Control -->
+        <div class="project-item plc bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Otomasi Industri</span>
+              <span class="text-xs text-slate-400 font-mono">Prioritas 1</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">PLC-Based Sequential Control System</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pengembangan logika kendali sekuensial menggunakan PLC untuk mengatur urutan operasi peralatan industri berdasarkan kondisi input dan status proses. Berfokus pada hubungan antara sensor, aktuator, timer, latch/reset, dan logika interlock pengaman.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Tujuan:</strong> Membangun pengendalian otomatis terstruktur agar tahapan operasi berjalan tanpa konflik logika.</div>
+              <div><strong class="text-slate-200">Kompetensi:</strong> Sequential control, ladder logic design, debugging logika otomasi.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">CX-Programmer</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Sequential Logic</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Interlock</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Simulasi Valid</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Water Level Control (WLC) Dual Star-Delta -->
+        <div class="project-item plc bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-brand-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Instrumentasi & Kendali Motor</span>
+              <span class="text-xs text-slate-400 font-mono">Prioritas 2</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Sistem Pengatur Level Air Tangki Otomatis (Dual Star-Delta 12 Jam)</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Perancangan sistem otomasi pengisian air tangki industri berbasis sensor Water Level Control (WLC) yang mengatur dua kelompok motor pompa dengan starter Star-Delta. Dilengkapi timer switching 12 jam agar beban kerja kedua pompa seimbang dan motor terhindar dari panas berlebih.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Problem:</strong> Mencegah motor pompa aus/overheat dan mereduksi lonjakan arus mula (inrush current).</div>
+              <div><strong class="text-slate-200">Solusi:</strong> Kombinasi WLC level cut-off + starter Star-Delta + timer pergantian siklus 12 jam pada CX-Programmer.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">WLC Sensor</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Star-Delta</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">CX-Programmer</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Desain & Simulasi</span>
+          </div>
+        </div>
+
+        <!-- Project 4: Praktikum Generator Hidro -->
+        <div class="project-item power bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-accent-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-accent-500/10 text-accent-400 border border-accent-500/20">Pembangkitan Energi</span>
+              <span class="text-xs text-slate-400 font-mono">Praktikum Lab</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Praktikum Karakteristik Generator Hidro</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pengamatan dan analisis karakteristik generator pada sistem pembangkit hidro laboratorium pada kondisi tanpa beban dan berbeban. Menguji pengaruh variasi tekanan air, debit aliran, dan bukaan nosel turbin terhadap tegangan dan daya keluaran generator.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Metode:</strong> Pencatatan data empiris di laboratorium PENS dan analisis kurva karakteristik tegangan-frekuensi.</div>
+              <div><strong class="text-slate-200">Kompetensi:</strong> Dasar pembangkitan hidro, analisis generator sinkron, interpretasi data numerik.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Turbin Hidro</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Generator</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Lab PENS</span>
+            </div>
+            <span class="text-xs font-mono text-cyan-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Data Praktikum</span>
+          </div>
+        </div>
+
+        <!-- Project 5: Praktikum PLTD Mini 1 HP, 0.7 kW -->
+        <div class="project-item power bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-accent-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-accent-500/10 text-accent-400 border border-accent-500/20">Pembangkitan Tenaga</span>
+              <span class="text-xs text-slate-400 font-mono">Praktikum Lab</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Praktikum PLTD Mini 1 HP (0,7 kW)</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pembelajaran sistem pembangkit listrik tenaga diesel skala laboratorium 0,7 kW. Mempelajari fungsi mesin diesel sebagai prime mover, proses konversi energi mekanik menjadi energi listrik, serta kestabilan keluaran generator terhadap variasi kondisi pengoperasian.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Fokus:</strong> Interaksi mesin pembakaran dalam dengan generator listrik dan prosedur keselamatan operasi.</div>
+              <div><strong class="text-slate-200">Kompetensi:</strong> Dasar sistem pembangkit termal/diesel dan analisis karakteristik unit pembangkit.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PLTD Mini</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Diesel 0.7 kW</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Prime Mover</span>
+            </div>
+            <span class="text-xs font-mono text-cyan-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Data Praktikum</span>
+          </div>
+        </div>
+
+        <!-- Project 6: Motor DC Kompon Panjang Diferensial -->
+        <div class="project-item power bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-accent-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-amber-500/10 text-industrial-gold border border-amber-500/20">Mesin-Mesin Listrik</span>
+              <span class="text-xs text-slate-400 font-mono">Praktikum Lab</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Analisis Karakteristik Motor DC Kompon Panjang Diferensial</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Praktikum pengujian karakteristik kecepatan dan torsi motor arus searah konfigurasi kompon panjang diferensial. Mengamati pengaruh fluks medan seri yang berlawanan dengan medan shunt terhadap respon putaran motor saat dibebani.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Fokus:</strong> Analisis elektromagnetik kumparan kompon, pengukuran arus jangkar, kecepatan putar (rpm), dan torsi.</div>
+              <div><strong class="text-slate-200">Kompetensi:</strong> Pemahaman mendalam mesin listrik DC dan verifikasi teori vs data riil.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Motor DC</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Kompon Diferensial</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Lab Mesin</span>
+            </div>
+            <span class="text-xs font-mono text-cyan-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Data Praktikum</span>
+          </div>
+        </div>
+
+        <!-- Project 7: Pengujian Karakteristik ELCB -->
+        <div class="project-item protection bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-rose-500/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Proteksi & Keselamatan</span>
+              <span class="text-xs text-slate-400 font-mono">Praktikum Lab</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Pengujian Karakteristik ELCB (Earth Leakage Circuit Breaker)</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pengujian laboratorium terhadap karakteristik kerja dan keandalan perangkat proteksi arus bocor ke tanah (ELCB). Mengamati respons waktu pemutusan (tripping time) terhadap variasi nilai arus bocor yang disuntikkan.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Fokus:</strong> Verifikasi batas ambang proteksi untuk keselamatan manusia dari tegangan sentuh tak langsung.</div>
+              <div><strong class="text-slate-200">Kompetensi:</strong> Sistem proteksi instalasi, pemahaman arus sisa (RCD/ELCB), kepatuhan keselamatan listrik.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">ELCB</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Arus Bocor</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">K3 Listrik</span>
+            </div>
+            <span class="text-xs font-mono text-cyan-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Data Praktikum</span>
+          </div>
+        </div>
+
+        <!-- Project 8: Desain PCB KiCAD -->
+        <div class="project-item protection bg-industrial-surface border border-industrial-border rounded-xl p-6 hover:border-industrial-gold/50 transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-amber-500/10 text-industrial-gold border border-amber-500/20">Perancangan Hardware</span>
+              <span class="text-xs text-slate-400 font-mono">Desain Software</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Perancangan Skematik & Layout PCB 3D Menggunakan KiCAD</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Perancangan papan sirkuit tercetak (PCB) yang rapi dan terukur dari diagram skematik, tata letak komponen, penarikan jalur tembaga (routing), hingga verifikasi model fisik menggunakan fitur KiCAD 3D Viewer.
+            </p>
+            <div class="space-y-1.5 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Solusi:</strong> Mengeliminasi kelemahan kabel breadboard yang rentan derau/noise dan koneksi longgar.</div>
+              <div><strong class="text-slate-200">Verifikasi:</strong> Memenuhi standar Design Rule Check (DRC) tanpa clearance & unrouted errors.</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">KiCAD</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">PCB 3D</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">DRC Check</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> DRC Verified</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. EXPERIENCE ==================== -->
+    <section id="pengalaman" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">04. Rekam Jejak</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Pengalaman Lapangan & Akademik</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Praktik Lapangan & Pengujian Lab</p>
+      </div>
+
+      <div class="relative border-l border-industrial-border ml-3 sm:ml-6 space-y-10 pl-6 sm:pl-8">
+        
+        <!-- Experience Item 1 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-industrial-navy group-hover:scale-125 transition-transform"></div>
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Magang / Praktik Industri</span>
+              <span class="text-xs text-slate-400 font-mono">Pengalaman Lapangan</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Teknisi & Mekanik Kelistrikan (Internship)</h3>
+            <div class="text-sm font-medium text-slate-300">Perusahaan Kontraktor Listrik & Pemeliharaan Listrik</div>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-1 max-w-3xl leading-relaxed">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+                <span>Melakukan pekerjaan pengabelan (wiring technician), penarikan jalur, dan penataan kabel pada panel kontrol dan daya.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+                <span>Membantu pelaksanaan pemeliharaan preventif dan inspeksi berkala pada instalasi distribusi daya listrik.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+                <span>Melakukan troubleshooting awal terhadap gangguan kontinuitas kabel dan sambungan terminal yang longgar.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+                <span>Menerapkan prosedur keselamatan kerja (K3 listrik) selama berada di lingkungan kerja industri.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-accent-500 border-4 border-industrial-navy group-hover:scale-125 transition-transform"></div>
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent-500/10 text-accent-400 border border-accent-500/20">Praktikum Laboratorium</span>
+              <span class="text-xs text-slate-400 font-mono">PENS • 2025 - Sekarang</span>
+            </div>
+            <h3 class="text-lg font-bold text-white">Pengujian Laboratorium & Analisis Data Teknis</h3>
+            <div class="text-sm font-medium text-slate-300">Laboratorium Mesin Listrik, Otomasi & Sistem Tenaga PENS</div>
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-1.5 pt-1 max-w-3xl leading-relaxed">
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Melakukan perakitan rangkaian pengujian mesin listrik dan proteksi secara mandiri maupun tim.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Mengoperasikan instrumen pengukuran analog dan digital dengan standar ketelitian tinggi.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-accent-400 mt-0.5 shrink-0"></i>
+                <span>Mengembangkan kebiasaan dokumentasi teknis yang sistematis melalui penyusunan laporan pengujian berbasis data numerik.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. EDUCATION ==================== -->
+    <section id="pendidikan" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">05. Riwayat Formal</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Pendidikan</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Pendidikan Tinggi Vokasi</p>
+      </div>
+
+      <div class="bg-industrial-surface border border-industrial-border rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row gap-6 items-start justify-between">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-brand-400 font-bold border border-slate-700">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Politeknik Elektronika Negeri Surabaya (PENS)</h3>
+              <p class="text-sm font-medium text-brand-400">Diploma 3 (D3) Teknik Elektro Industri</p>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Menempuh pendidikan vokasi rekayasa elektro dengan kurikulum yang menitikberatkan pada penguasaan teori fundamental kelistrikan, praktik laboratorium intensif, dan kesiapan operasional industri.
+          </p>
+
+          <div class="pt-2">
+            <span class="text-xs font-mono uppercase text-slate-400 block mb-2">Fokus Kurikulum & Pembelajaran:</span>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Rangkaian & Pengukuran Listrik</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Mesin Listrik & Pembangkitan</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Sistem Kontrol & PLC</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Elektronika Daya</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 border border-slate-700">Instalasi & Proteksi Kelistrikan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shrink-0 bg-industrial-card border border-industrial-border rounded-xl p-4 text-xs font-mono space-y-2 w-full md:w-56">
+          <div class="flex justify-between text-slate-400 pb-1 border-b border-slate-700">
+            <span>Kelas</span>
+            <strong class="text-white">D3 ELIN A</strong>
+          </div>
+          <div class="flex justify-between text-slate-400 pb-1 border-b border-slate-700">
+            <span>Angkatan</span>
+            <strong class="text-white">2025</strong>
+          </div>
+          <div class="flex justify-between text-slate-400 pb-1 border-b border-slate-700">
+            <span>Status</span>
+            <strong class="text-emerald-400">Mahasiswa Aktif</strong>
+          </div>
+          <div class="flex justify-between text-slate-400">
+            <span>Lokasi</span>
+            <strong class="text-white">Surabaya, ID</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. CONTACT ==================== -->
+    <section id="kontak" class="scroll-mt-28 space-y-8">
+      <div class="border-b border-industrial-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-brand-400">06. Komunikasi & Diskusi</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Hubungi Saya</h2>
+        </div>
+        <p class="text-xs text-slate-400 font-mono">Terbuka untuk Peluang Kolaborasi & Karier</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Contact Information -->
+        <div class="lg:col-span-5 space-y-4">
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Terbuka untuk berdiskusi mengenai teknik elektro, otomasi industri, sistem kontrol, pembelajaran teknis, serta peluang magang dan pengembangan kompetensi di industri energi maupun manufaktur.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <!-- Email -->
+            <a href="mailto:deryahnaf@gmail.com" class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-brand-500/50 flex items-center gap-4 transition group">
+              <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-xs text-slate-400 font-mono">Email Utama</div>
+                <div class="text-sm font-semibold text-white truncate group-hover:text-brand-400 transition-colors">deryahnaf@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6288991780441" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-industrial-surface border border-industrial-border hover:border-accent-500/50 flex items-center gap-4 transition group">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-mono">WhatsApp</div>
+                <div class="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">088991780441</div>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="p-4 rounded-xl bg-industrial-surface border border-industrial-border flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-mono">Domisili</div>
+                <div class="text-sm font-semibold text-white">Surabaya, Jawa Timur, Indonesia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Direct Inquiry Card -->
+        <div class="lg:col-span-7 bg-industrial-surface border border-industrial-border rounded-2xl p-6 sm:p-8 space-y-4">
+          <div class="flex items-center gap-2 text-brand-400 text-xs font-mono uppercase tracking-wider">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Kirim Pesan Cepat
+          </div>
+          <h3 class="text-lg font-bold text-white">Siap Berkontribusi di Bidang Kelistrikan Industri</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Jika perusahaan Anda sedang membuka kesempatan magang, pelatihan industri, atau ingin mendiskusikan implementasi sistem otomasi dan kelistrikan, silakan langsung menghubungi saya melalui tautan di samping atau tombol di bawah ini.
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="mailto:deryahnaf@gmail.com?subject=Tawaran%20Diskusi%20Kelistrikan%20Industri%20-%20Dery%20Ahnaf" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i> Tulis Email Langsung
+            </a>
+            <a href="https://wa.me/6288991780441?text=Halo%20Dery,%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20proyek%20kelistrikan" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> Chat via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-28 border-t border-industrial-border bg-industrial-navy/90 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
+      <div>
+        © 2026 <strong class="text-slate-200">Dery Ahnaf Rashad</strong> • Mahasiswa D3 Teknik Elektro Industri PENS.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#beranda" class="hover:text-brand-400 transition">Kembali ke Atas ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on click link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Interactive Project Filter
+    function filterProjects(category) {
+      // update active button styles
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white');
+        btn.classList.add('bg-slate-800', 'text-slate-300');
+      });
+      event.target.classList.remove('bg-slate-800', 'text-slate-300');
+      event.target.classList.add('bg-brand-600', 'text-white');
+
+      // filter items
+      const items = document.querySelectorAll('.project-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
